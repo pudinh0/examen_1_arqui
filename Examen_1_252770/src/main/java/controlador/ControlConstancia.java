@@ -13,7 +13,7 @@ import modelo.IControlModelo;
  */
 public class ControlConstancia {
 
-    IControlModelo control = ConstanciaModelo.getInstance();
+    private final IControlModelo control = ConstanciaModelo.getInstance();
 
     public void generarConstancia() {
         control.generarConstanciaAlumnoSeleccionado();

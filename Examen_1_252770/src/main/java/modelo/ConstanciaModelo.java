@@ -21,7 +21,7 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
     private final List<ISuscriptor> suscriptores;
 
     private final List<Alumno> alumnosEncontrados = new ArrayList<>();
-    public Alumno alumnoSeleccionado;
+    private Alumno alumnoSeleccionado;
     private String constanciaTexto = "";
 
     public ConstanciaModelo() {
@@ -60,7 +60,7 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
      * 
      * @param alumno 
      */
-    public void seleccionarAlumno(Alumno alumno) {
+    private void seleccionarAlumno(Alumno alumno) {
         this.alumnoSeleccionado = alumno;
         this.constanciaTexto = "";
         notifyAllSuscribers();
