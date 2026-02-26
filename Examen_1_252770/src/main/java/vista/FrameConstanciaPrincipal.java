@@ -5,7 +5,6 @@
 package vista;
 
 import controlador.ControlConstancia;
-import java.util.List;
 import javax.swing.DefaultListModel;
 import dominio.Alumno;
 import modelo.IModeloVista;
