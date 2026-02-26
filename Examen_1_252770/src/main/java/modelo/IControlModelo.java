@@ -10,6 +10,8 @@ package modelo;
  */
 public interface IControlModelo {
         public void mostrarAlumnosPorId(String busqueda);
+        
         public void generarConstanciaAlumnoSeleccionado();
+        
         public void seleccionarAlumnoPorIndice(int id);
 }
