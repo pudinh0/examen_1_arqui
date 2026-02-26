@@ -9,6 +9,7 @@ package modelo;
  * @author adell
  */
 public interface IControlModelo {
-        public void mostrarAlumnoPorId();
+        public void mostrarAlumnosPorId(String busqueda);
         public void generarConstanciaAlumnoSeleccionado();
+        public void seleccionarAlumnoPorIndice(int id);
 }

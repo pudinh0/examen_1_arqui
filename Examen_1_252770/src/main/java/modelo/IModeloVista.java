@@ -4,10 +4,17 @@
  */
 package modelo;
 
+import java.util.List;
+
 /**
  *
  * @author adell
  */
 public interface IModeloVista {
-    
+
+    public List<Alumno> getAlumnosEncontrados();
+
+    public Alumno getAlumnoSeleccionado();
+
+    public String getConstanciaTexto();
 }

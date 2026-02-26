@@ -4,21 +4,28 @@
  */
 package vista;
 
+import controlador.ControlConstancia;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import modelo.Alumno;
 import modelo.IModeloVista;
 
 /**
  *
  * @author adell
  */
-public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISuscriptor{
+public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISuscriptor {
 
     /**
      * Creates new form FrameConstanciaPrincipal
      */
     public FrameConstanciaPrincipal() {
         initComponents();
+        alumnosFiltradosJList.setModel(new DefaultListModel<String>());
     }
     private static FrameConstanciaPrincipal instancia;
+    ControlConstancia control = new ControlConstancia();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,46 +36,46 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
     private void initComponents() {
 
         contenedorPrincipalPanel = new javax.swing.JPanel();
-        alumnosPorIdPanel = new javax.swing.JPanel();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        jTextField1 = new javax.swing.JTextField();
-        datosAlumnoPanel = new javax.swing.JPanel();
+        idTxTField = new javax.swing.JTextField();
         generarConstanciaBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        alumnosFiltradosJList = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         contenedorPrincipalPanel.setBackground(new java.awt.Color(161, 79, 126));
 
-        javax.swing.GroupLayout alumnosPorIdPanelLayout = new javax.swing.GroupLayout(alumnosPorIdPanel);
-        alumnosPorIdPanel.setLayout(alumnosPorIdPanelLayout);
-        alumnosPorIdPanelLayout.setHorizontalGroup(
-            alumnosPorIdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alumnosPorIdPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        alumnosPorIdPanelLayout.setVerticalGroup(
-            alumnosPorIdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(alumnosPorIdPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout datosAlumnoPanelLayout = new javax.swing.GroupLayout(datosAlumnoPanel);
-        datosAlumnoPanel.setLayout(datosAlumnoPanelLayout);
-        datosAlumnoPanelLayout.setHorizontalGroup(
-            datosAlumnoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        datosAlumnoPanelLayout.setVerticalGroup(
-            datosAlumnoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 336, Short.MAX_VALUE)
-        );
+        idTxTField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                idTxTFieldKeyReleased(evt);
+            }
+        });
 
         generarConstanciaBtn.setText("Generar Constancia");
+        generarConstanciaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generarConstanciaBtnActionPerformed(evt);
+            }
+        });
+
+        alumnosFiltradosJList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        alumnosFiltradosJList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                alumnosFiltradosJListMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(alumnosFiltradosJList);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout contenedorPrincipalPanelLayout = new javax.swing.GroupLayout(contenedorPrincipalPanel);
         contenedorPrincipalPanel.setLayout(contenedorPrincipalPanelLayout);
@@ -77,27 +84,26 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
             .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                    .addComponent(alumnosPorIdPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(idTxTField, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
                 .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(datosAlumnoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
+                    .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         contenedorPrincipalPanelLayout.setVerticalGroup(
             contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
+                .addComponent(idTxTField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
-                        .addComponent(datosAlumnoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(alumnosPorIdPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
@@ -114,26 +120,62 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    public static FrameConstanciaPrincipal getInstancia(){
-        if (instancia==null) {
-            instancia= new FrameConstanciaPrincipal();
+
+    private void generarConstanciaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarConstanciaBtnActionPerformed
+        // TODO add your handling code here:
+
+        control.generarConstancia();
+    }//GEN-LAST:event_generarConstanciaBtnActionPerformed
+
+    private void idTxTFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idTxTFieldKeyReleased
+        // TODO add your handling code here:
+        String id = idTxTField.getText();
+        control.filtrar(id);
+
+    }//GEN-LAST:event_idTxTFieldKeyReleased
+
+    private void alumnosFiltradosJListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alumnosFiltradosJListMouseClicked
+        // TODO add your handling code here:
+        int index = alumnosFiltradosJList.getSelectedIndex();
+        control.seleccionarAlumnoPorIndice(index);
+
+    }//GEN-LAST:event_alumnosFiltradosJListMouseClicked
+
+    public static FrameConstanciaPrincipal getInstancia() {
+        if (instancia == null) {
+            instancia = new FrameConstanciaPrincipal();
         }
         return instancia;
     }
 
     @Override
     public void update(IModeloVista modeloVista) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        List<Alumno> filtrados = modeloVista.getAlumnosEncontrados();
+        for (Alumno a : filtrados) {
+            listModel.addElement(a.getNombre());
+        }
+
+        this.alumnosFiltradosJList.setModel(listModel);
+        this.alumnosFiltradosJList.repaint();
+
+        if (!modeloVista.getConstanciaTexto().isEmpty()) {
+            this.jTextArea1.setText(modeloVista.getConstanciaTexto());
+        } else if (modeloVista.getAlumnoSeleccionado() != null) {
+            this.jTextArea1.setText("Semestre: " + modeloVista.getAlumnoSeleccionado().getNumeroSemestre());
+        }
+
     }
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel alumnosPorIdPanel;
+    private javax.swing.JList<String> alumnosFiltradosJList;
     private javax.swing.JPanel contenedorPrincipalPanel;
-    private javax.swing.JPanel datosAlumnoPanel;
     private javax.swing.JButton generarConstanciaBtn;
-    private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField idTxTField;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
