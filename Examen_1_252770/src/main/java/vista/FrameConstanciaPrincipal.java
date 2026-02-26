@@ -28,17 +28,88 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contenedorPrincipalPanel = new javax.swing.JPanel();
+        alumnosPorIdPanel = new javax.swing.JPanel();
+        jScrollBar1 = new javax.swing.JScrollBar();
+        jTextField1 = new javax.swing.JTextField();
+        datosAlumnoPanel = new javax.swing.JPanel();
+        generarConstanciaBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        contenedorPrincipalPanel.setBackground(new java.awt.Color(161, 79, 126));
+
+        javax.swing.GroupLayout alumnosPorIdPanelLayout = new javax.swing.GroupLayout(alumnosPorIdPanel);
+        alumnosPorIdPanel.setLayout(alumnosPorIdPanelLayout);
+        alumnosPorIdPanelLayout.setHorizontalGroup(
+            alumnosPorIdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alumnosPorIdPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        alumnosPorIdPanelLayout.setVerticalGroup(
+            alumnosPorIdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(alumnosPorIdPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout datosAlumnoPanelLayout = new javax.swing.GroupLayout(datosAlumnoPanel);
+        datosAlumnoPanel.setLayout(datosAlumnoPanelLayout);
+        datosAlumnoPanelLayout.setHorizontalGroup(
+            datosAlumnoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        datosAlumnoPanelLayout.setVerticalGroup(
+            datosAlumnoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 336, Short.MAX_VALUE)
+        );
+
+        generarConstanciaBtn.setText("Generar Constancia");
+
+        javax.swing.GroupLayout contenedorPrincipalPanelLayout = new javax.swing.GroupLayout(contenedorPrincipalPanel);
+        contenedorPrincipalPanel.setLayout(contenedorPrincipalPanelLayout);
+        contenedorPrincipalPanelLayout.setHorizontalGroup(
+            contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                    .addComponent(alumnosPorIdPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(datosAlumnoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        contenedorPrincipalPanelLayout.setVerticalGroup(
+            contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
+                        .addComponent(datosAlumnoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alumnosPorIdPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(contenedorPrincipalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(contenedorPrincipalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -58,5 +129,11 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel alumnosPorIdPanel;
+    private javax.swing.JPanel contenedorPrincipalPanel;
+    private javax.swing.JPanel datosAlumnoPanel;
+    private javax.swing.JButton generarConstanciaBtn;
+    private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

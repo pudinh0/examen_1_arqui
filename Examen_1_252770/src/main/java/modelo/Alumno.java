@@ -59,6 +59,11 @@ public class Alumno {
     public void setCarrera(String carrera) {
         this.carrera = carrera;
     }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "id=" + id + ", cantidadMaterias=" + cantidadMaterias + ", numeroSemestre=" + numeroSemestre + ", nombre=" + nombre + ", carrera=" + carrera + '}';
+    }
     
     
 }
