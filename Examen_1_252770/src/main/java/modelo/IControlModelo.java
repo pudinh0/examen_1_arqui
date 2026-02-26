@@ -9,5 +9,6 @@ package modelo;
  * @author adell
  */
 public interface IControlModelo {
-    
+        public void mostrarAlumnoPorId();
+        public void generarConstanciaAlumnoSeleccionado();
 }

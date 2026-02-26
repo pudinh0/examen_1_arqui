@@ -4,10 +4,14 @@
  */
 package controlador;
 
+import modelo.ConstanciaModelo;
+import modelo.IControlModelo;
+
 /**
  *
  * @author adell
  */
 public class ControlConstancia {
-    
+  IControlModelo control = new ConstanciaModelo();
+  
 }

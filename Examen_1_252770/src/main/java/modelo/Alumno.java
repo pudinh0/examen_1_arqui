@@ -4,13 +4,17 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author adell
  */
 public class Alumno {
+
     int id, cantidadMaterias, numeroSemestre;
     String nombre, carrera;
+    static ArrayList<Alumno> alumnos = new ArrayList<>();
 
     public Alumno(int id, int cantidadMaterias, int numeroSemestre, String nombre, String carrera) {
         this.id = id;
@@ -20,6 +24,24 @@ public class Alumno {
         this.carrera = carrera;
     }
 
+    static {
+        Alumno adel = new Alumno(252770, 6, 6, "Adel", "ISW");
+        Alumno norma = new Alumno(252102, 7, 6, "Norma", "ISW");
+        Alumno denis = new Alumno(252450, 8, 6, "Denis", "ISW");
+        Alumno peter = new Alumno(252627, 9, 6, "Peter", "ISW");
+        
+        alumnos.add(adel);
+        alumnos.add(norma);
+        alumnos.add(denis);
+        alumnos.add(peter);
+    }
+    
+    public static void imprimirLista(){
+        for (Alumno alumno: alumnos ) {
+            System.out.println(alumno);
+        }
+    }
+    
     public int getId() {
         return id;
     }
@@ -64,6 +86,5 @@ public class Alumno {
     public String toString() {
         return "Alumno{" + "id=" + id + ", cantidadMaterias=" + cantidadMaterias + ", numeroSemestre=" + numeroSemestre + ", nombre=" + nombre + ", carrera=" + carrera + '}';
     }
-    
-    
+
 }
