@@ -42,7 +42,7 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
         alumnosEncontrados.clear();
         for (Alumno alumno : Alumno.alumnos) {
             if (String.valueOf(alumno.getId()).startsWith(busqueda)) {
-                alumnosEncontrados.add(alumno);    
+                alumnosEncontrados.add(alumno);
             }
         }
         notifyAllSuscribers();
@@ -69,16 +69,34 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
     @Override
     public void generarConstanciaAlumnoSeleccionado() {
         if (alumnoSeleccionado != null) {
-            this.constanciaTexto = "CONSTANCIA DE ESTUDIOS\n"
-                    + "El alumno " + alumnoSeleccionado.getNombre()
-                    + " con ID " + alumnoSeleccionado.getId()
-                    + " esta inscrito en " + alumnoSeleccionado.getCarrera()
-                    + " cursando " + alumnoSeleccionado.getCantidadMaterias() + " materias.";
+            String separador = "------------------------------------------------------------------------------------------\n";
+
+            this.constanciaTexto = "\n"
+                    + "\t            SISTEMA DE CONTROL ESCOLAR\n"
+                    + "\t         CONSTANCIA OFICIAL DE ESTUDIOS\n"
+                    + separador
+                    + "\n"
+                    + "  A QUIEN CORRESPONDA:\n\n"
+                    + "  Por medio de la presente, se hace constar que el estudiante:\n\n"
+                    + "  NOMBRE:  " + alumnoSeleccionado.getNombre().toUpperCase() + "\n"
+                    + "  ID:      " + alumnoSeleccionado.getId() + "\n"
+                    + "  CARRERA: " + alumnoSeleccionado.getCarrera() + "\n\n"
+                    + "  Se encuentra actualmente inscrito de manera regular,\n"
+                    + "  cursando un total de (" + alumnoSeleccionado.getCantidadMaterias() + ") materias\n"
+                    + "  correspondientes al semestre numero " + alumnoSeleccionado.getNumeroSemestre() + ".\n\n"
+                    + "  Se extiende la presente para los fines legales que al interesado\n"
+                    + "  convengan, con fecha de hoy: " + new java.util.Date().toString() + "\n\n"
+                    + "\n"
+                    + "\t                     Popusitas\n"
+                    + "\t                ____________________\n"
+                    + "\t                 FIRMA DIGITAL\n"
+                    + "\n"
+                    + separador;
+
             notifyAllSuscribers();
         } else {
             System.out.println(" Error: no hay ningun alumno seleccionado actualmente");
         }
-
     }
 
     // metodos de IModeloVista

@@ -44,6 +44,8 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
         jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -65,7 +67,7 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
         });
 
         alumnosFiltradosJList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = {""};
+            String[] strings = { "" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -77,6 +79,7 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
         jScrollPane1.setViewportView(alumnosFiltradosJList);
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
@@ -84,15 +87,16 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel1.setText("CONSTANCIAS");
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(234, 234, 234)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(221, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addGap(208, 208, 208))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,51 +106,78 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel2.setText("Escribe tu id:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(17, 17, 17))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 7, Short.MAX_VALUE)
+                .addComponent(jLabel2))
+        );
+
         javax.swing.GroupLayout contenedorPrincipalPanelLayout = new javax.swing.GroupLayout(contenedorPrincipalPanel);
         contenedorPrincipalPanel.setLayout(contenedorPrincipalPanelLayout);
         contenedorPrincipalPanelLayout.setHorizontalGroup(
             contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(79, 79, 79)
+                .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
                         .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(idTxTField)
+                            .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(idTxTField, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                            .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         contenedorPrincipalPanelLayout.setVerticalGroup(
             contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(16, 16, 16)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
-                        .addComponent(idTxTField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(contenedorPrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idTxTField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1)))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorPrincipalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedorPrincipalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorPrincipalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedorPrincipalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -181,26 +212,38 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
 
     @Override
     public void update(IModeloVista modeloVista) {
-        
-        //se inyecta la lista de alumnos al JList
+        // 1. Actualizar Lista
         DefaultListModel<String> listModel = new DefaultListModel<>();
-        List<Alumno> filtrados = modeloVista.getAlumnosEncontrados();
-        for (Alumno a : filtrados) {
-            listModel.addElement(a.getNombre());
+        for (Alumno a : modeloVista.getAlumnosEncontrados()) {
+            listModel.addElement(a.getNombre() + " [" + a.getId() + "]");
         }
 
         this.alumnosFiltradosJList.setModel(listModel);
-        this.alumnosFiltradosJList.repaint();
-        
-        //Se inyecta la informacion del alumno para generar la contancias en el JText
+
         if (!modeloVista.getConstanciaTexto().isEmpty()) {
             this.jTextArea1.setText(modeloVista.getConstanciaTexto());
         } else if (modeloVista.getAlumnoSeleccionado() != null) {
-            this.jTextArea1.setText("Semestre: " + modeloVista.getAlumnoSeleccionado().getNumeroSemestre());
+            this.jTextArea1.setText(formatearFichaAlumno(modeloVista.getAlumnoSeleccionado()));
+        } else {
+            this.jTextArea1.setText("\n  Seleccione un alumno de la lista.");
         }
-
     }
 
+    private String formatearFichaAlumno(Alumno sel) {
+        if (sel == null) {
+            return "";
+        }
+
+        return "  DETALLES DEL ALUMNO SELECCIONADO\n"
+                + "  ====================================\n\n"
+                + String.format("  %-10s %s\n", "ID:", sel.getId())
+                + String.format("  %-10s %s\n", "NOMBRE:", sel.getNombre())
+                + String.format("  %-10s %s\n", "CARRERA:", sel.getCarrera())
+                + String.format("  %-10s %d° Semestre\n", "SEMESTRE:", sel.getNumeroSemestre())
+                + String.format("  %-10s %d inscritas\n\n", "MATERIAS:", sel.getCantidadMaterias())
+                + "  ------------------------------------\n"
+                + "  Presione 'Generar Constancia' para el documento oficial.";
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> alumnosFiltradosJList;
@@ -208,7 +251,9 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
     private javax.swing.JButton generarConstanciaBtn;
     private javax.swing.JTextField idTxTField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
