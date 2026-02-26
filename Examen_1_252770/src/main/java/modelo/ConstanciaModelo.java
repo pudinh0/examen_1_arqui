@@ -4,6 +4,7 @@
  */
 package modelo;
 
+import dominio.Alumno;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,9 +17,9 @@ import vista.ISuscriptor;
 public class ConstanciaModelo implements IControlModelo, IModeloVista {
 
     public static ConstanciaModelo instancia;
-    private List<ISuscriptor> suscriptores;
+    private final List<ISuscriptor> suscriptores;
 
-    private List<Alumno> alumnosEncontrados = new ArrayList<>();
+    private final List<Alumno> alumnosEncontrados = new ArrayList<>();
     public Alumno alumnoSeleccionado;
     private String constanciaTexto = "";
 

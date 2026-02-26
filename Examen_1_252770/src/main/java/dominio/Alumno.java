@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package dominio;
 
 import java.util.ArrayList;
 
@@ -12,9 +12,9 @@ import java.util.ArrayList;
  */
 public class Alumno {
 
-    int id, cantidadMaterias, numeroSemestre;
-    String nombre, carrera;
-    static ArrayList<Alumno> alumnos = new ArrayList<>();
+    private int id, cantidadMaterias, numeroSemestre;
+    private String nombre, carrera;
+    public static ArrayList<Alumno> alumnos = new ArrayList<>();
 
     public Alumno(int id, int cantidadMaterias, int numeroSemestre, String nombre, String carrera) {
         this.id = id;

@@ -7,7 +7,7 @@ package vista;
 import controlador.ControlConstancia;
 import java.util.List;
 import javax.swing.DefaultListModel;
-import modelo.Alumno;
+import dominio.Alumno;
 import modelo.IModeloVista;
 
 /**
@@ -132,8 +132,8 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contenedorPrincipalPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(generarConstanciaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
@@ -181,7 +181,8 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
 
     @Override
     public void update(IModeloVista modeloVista) {
-
+        
+        //se inyecta la lista de alumnos al JList
         DefaultListModel<String> listModel = new DefaultListModel<>();
         List<Alumno> filtrados = modeloVista.getAlumnosEncontrados();
         for (Alumno a : filtrados) {
@@ -190,7 +191,8 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
 
         this.alumnosFiltradosJList.setModel(listModel);
         this.alumnosFiltradosJList.repaint();
-
+        
+        //Se inyecta la informacion del alumno para generar la contancias en el JText
         if (!modeloVista.getConstanciaTexto().isEmpty()) {
             this.jTextArea1.setText(modeloVista.getConstanciaTexto());
         } else if (modeloVista.getAlumnoSeleccionado() != null) {

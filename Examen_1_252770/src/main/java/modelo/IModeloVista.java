@@ -4,6 +4,7 @@
  */
 package modelo;
 
+import dominio.Alumno;
 import java.util.List;
 
 /**

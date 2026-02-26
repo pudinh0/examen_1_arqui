@@ -4,7 +4,7 @@
  */
 package controlador;
 
-import modelo.Alumno;
+import dominio.Alumno;
 import modelo.ConstanciaModelo;
 import modelo.IControlModelo;
 
