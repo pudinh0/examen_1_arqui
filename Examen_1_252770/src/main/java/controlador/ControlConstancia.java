@@ -4,7 +4,6 @@
  */
 package controlador;
 
-import dominio.Alumno;
 import modelo.ConstanciaModelo;
 import modelo.IControlModelo;
 
@@ -13,18 +12,20 @@ import modelo.IControlModelo;
  * @author adell
  */
 public class ControlConstancia {
-  IControlModelo control = ConstanciaModelo.getInstance();
-  
-  public void generarConstancia(){
-      control.generarConstanciaAlumnoSeleccionado();
-  }
-  
-  public void filtrar(String id){
-      control.mostrarAlumnosPorId(id);
-  }
-  
-  public void seleccionarAlumnoPorIndice(int id){
-      control.seleccionarAlumnoPorIndice(id);
-  }
-  
+
+    IControlModelo control = ConstanciaModelo.getInstance();
+
+    public void generarConstancia() {
+        control.generarConstanciaAlumnoSeleccionado();
+    }
+
+    public void filtrar(String id) {
+        control.mostrarAlumnosPorId(id);
+    }
+
+    public void seleccionarAlumnoPorIndice(int id) {
+        control.seleccionarAlumnoPorIndice(id);
+
+    }
+
 }
