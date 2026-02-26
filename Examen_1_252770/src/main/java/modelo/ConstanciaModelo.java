@@ -8,6 +8,6 @@ package modelo;
  *
  * @author adell
  */
-public class ConstanciaModelo {
+public class ConstanciaModelo implements IControlModelo, IModeloVista{
     
 }
