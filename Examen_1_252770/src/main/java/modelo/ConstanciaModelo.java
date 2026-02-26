@@ -11,8 +11,9 @@ import java.util.List;
 import vista.ISuscriptor;
 
 /**
- *
+ * 
  * @author adell
+ * 
  */
 public class ConstanciaModelo implements IControlModelo, IModeloVista {
 
@@ -27,7 +28,10 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
         this.suscriptores = new LinkedList<>();
 
     }
-
+    /**
+     * 
+     * @return 
+     */
     public static ConstanciaModelo getInstance() {
         if (instancia == null) {
             instancia = new ConstanciaModelo();
@@ -37,6 +41,10 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
     }
 
     //metodos de IControlModelo
+    /**
+     * 
+     * @param busqueda 
+     */
     @Override
     public void mostrarAlumnosPorId(String busqueda) {
         alumnosEncontrados.clear();
@@ -47,13 +55,21 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
         }
         notifyAllSuscribers();
     }
-
+    
+    /**
+     * 
+     * @param alumno 
+     */
     public void seleccionarAlumno(Alumno alumno) {
         this.alumnoSeleccionado = alumno;
         this.constanciaTexto = "";
         notifyAllSuscribers();
     }
-
+    
+    /**
+     * 
+     * @param index 
+     */
     @Override
     public void seleccionarAlumnoPorIndice(int index) {
 
@@ -65,7 +81,10 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
             seleccionarAlumno(a);
         }
     }
-
+    
+    /**
+     * 
+     */
     @Override
     public void generarConstanciaAlumnoSeleccionado() {
         if (alumnoSeleccionado != null) {

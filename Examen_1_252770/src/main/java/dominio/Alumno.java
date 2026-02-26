@@ -7,7 +7,7 @@ package dominio;
 import java.util.ArrayList;
 
 /**
- *
+ * 
  * @author adell
  */
 public class Alumno {
