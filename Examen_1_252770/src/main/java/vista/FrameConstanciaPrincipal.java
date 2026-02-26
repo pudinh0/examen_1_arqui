@@ -23,7 +23,7 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
         alumnosFiltradosJList.setModel(new DefaultListModel<String>());
     }
     private static FrameConstanciaPrincipal instancia;
-    ControlConstancia control = new ControlConstancia();
+    private ControlConstancia control = new ControlConstancia();
 
     /**
      * This method is called from within the constructor to initialize the form.
