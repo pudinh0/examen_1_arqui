@@ -184,14 +184,27 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
     }// </editor-fold>//GEN-END:initComponents
 
     private void generarConstanciaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarConstanciaBtnActionPerformed
-        // TODO add your handling code here:
+        int indexSeleccionado = alumnosFiltradosJList.getSelectedIndex();
 
-        control.generarConstancia();
+        if (indexSeleccionado == -1) {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Por favor, seleccione un alumno de la lista.",
+                    "Selección Requerida",
+                    javax.swing.JOptionPane.WARNING_MESSAGE
+            );
+        } else {
+
+            control.seleccionarAlumnoPorIndice(indexSeleccionado);
+            control.generarConstancia();
+        }
     }//GEN-LAST:event_generarConstanciaBtnActionPerformed
 
     private void idTxTFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idTxTFieldKeyReleased
         // TODO add your handling code here:
         String id = idTxTField.getText();
+
         control.filtrar(id);
 
     }//GEN-LAST:event_idTxTFieldKeyReleased
@@ -199,8 +212,10 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
     private void alumnosFiltradosJListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alumnosFiltradosJListMouseClicked
         // TODO add your handling code here:
         int index = alumnosFiltradosJList.getSelectedIndex();
-        control.seleccionarAlumnoPorIndice(index);
 
+        if (index != -1) {
+            control.seleccionarAlumnoPorIndice(index);
+        }
     }//GEN-LAST:event_alumnosFiltradosJListMouseClicked
 
     public static FrameConstanciaPrincipal getInstancia() {
@@ -212,13 +227,18 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
 
     @Override
     public void update(IModeloVista modeloVista) {
-        // 1. Actualizar Lista
+        int indicePrevio = alumnosFiltradosJList.getSelectedIndex();
+
         DefaultListModel<String> listModel = new DefaultListModel<>();
         for (Alumno a : modeloVista.getAlumnosEncontrados()) {
             listModel.addElement(a.getNombre() + " [" + a.getId() + "]");
         }
 
         this.alumnosFiltradosJList.setModel(listModel);
+
+        if (indicePrevio != -1 && indicePrevio < listModel.getSize()) {
+            alumnosFiltradosJList.setSelectedIndex(indicePrevio);
+        }
 
         if (!modeloVista.getConstanciaTexto().isEmpty()) {
             this.jTextArea1.setText(modeloVista.getConstanciaTexto());
