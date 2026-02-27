@@ -11,7 +11,8 @@ import java.util.List;
 import vista.ISuscriptor;
 
 /**
- * 
+ * Clase que funge como el modelo en MVC, contiene la logica para generar constancias, seleccionar alumno y filtrarlos
+ * mediante la implmentacion de IControlModelo y IModeloVista
  * @author adell
  * 
  */
@@ -28,9 +29,10 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
         this.suscriptores = new LinkedList<>();
 
     }
+    
     /**
-     * 
-     * @return 
+     * Metodo que retorna la instancia unica de la clase, si no existe la crea 
+     * @return instancia unica de la clase
      */
     public static ConstanciaModelo getInstance() {
         if (instancia == null) {
@@ -42,8 +44,8 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
 
     //metodos de IControlModelo
     /**
-     * 
-     * @param busqueda 
+     *  Agrega a los alumnos que coincidan con el id buscado a una lista para mandarlos por medio del IModeloVista
+     * @param busqueda atributo que funge como la matricula buscada
      */
     @Override
     public void mostrarAlumnosPorId(String busqueda) {
@@ -57,8 +59,8 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
     }
     
     /**
-     * 
-     * @param alumno 
+     * Selecciona el alumno que ha sido seleccionado
+     * @param alumno  alumno seleccionado
      */
     private void seleccionarAlumno(Alumno alumno) {
         this.alumnoSeleccionado = alumno;
@@ -67,8 +69,8 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
     }
     
     /**
-     * 
-     * @param index 
+     * metodo que obtiene a los alumnos por medio de un arreglo.
+     * @param index indice que se refiere al alumno dentro de un arreglo
      */
     @Override
     public void seleccionarAlumnoPorIndice(int index) {
@@ -83,7 +85,8 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
     }
     
     /**
-     * 
+     * Metodo que genera la constancia dandole un bloque de texto a un string
+     * y llenandolos  con los datos del alumno seleccionado
      */
     @Override
     public void generarConstanciaAlumnoSeleccionado() {
@@ -119,26 +122,44 @@ public class ConstanciaModelo implements IControlModelo, IModeloVista {
     }
 
     // metodos de IModeloVista
+    /**
+     *  obtiene la lista de alumnos encontrados mediante la matricula ingresada
+     * @return devuelve la lista de alumnos encontrados
+     */
     @Override
     public List<Alumno> getAlumnosEncontrados() {
         return alumnosEncontrados;
     }
-
+    
+    /**
+     * obtiene el alumno seleccionado
+     * @return devuelve al alumno seleccionado
+     */
     @Override
     public Alumno getAlumnoSeleccionado() {
         return alumnoSeleccionado;
     }
-
+    /**
+     * obtiene el texto de la constancia
+     * @return  devuelve string con la constancia
+     */
     @Override
     public String getConstanciaTexto() {
         return constanciaTexto;
     }
 
     //metodos del publisher
+    /**
+     * agrega un suscriptor a la lista de suscriptores
+     * @param Suscriptor suscriptor que recibira las actualizaciones
+     */
     public void addSuscriptor(ISuscriptor Suscriptor) {
         suscriptores.add(Suscriptor);
     }
-
+    
+    /**
+     * Metodo que funciona para llamar el update de cada suscriptor en la lista de suscriptores
+     */
     public void notifyAllSuscribers() {
         for (ISuscriptor suscriptor : suscriptores) {
             suscriptor.update(this);

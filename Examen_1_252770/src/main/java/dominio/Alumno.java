@@ -7,7 +7,8 @@ package dominio;
 import java.util.ArrayList;
 
 /**
- * 
+ * Clase que funciona como la creadora de un arreglo estatico de alumnos y 
+ * entidad para el proyecto de alumnos
  * @author adell
  */
 public class Alumno {
@@ -23,7 +24,10 @@ public class Alumno {
         this.nombre = nombre;
         this.carrera = carrera;
     }
-
+    
+    /**
+     * adicion de elementos a la lista estatica creada llamada alumnos
+     */
     static {
         Alumno adel = new Alumno(252770, 6, 6, "Adel", "ISW");
         Alumno norma = new Alumno(252102, 7, 6, "Norma", "ISW");
@@ -40,11 +44,7 @@ public class Alumno {
         alumnos.add(juanpi);
     }
     
-    public static void imprimirLista(){
-        for (Alumno alumno: alumnos ) {
-            System.out.println(alumno);
-        }
-    }
+    
     
     public int getId() {
         return id;

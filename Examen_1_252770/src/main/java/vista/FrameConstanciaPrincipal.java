@@ -10,7 +10,8 @@ import dominio.Alumno;
 import modelo.IModeloVista;
 
 /**
- *
+ * Clase que funge como la Vista en el modelo MVC, se encarga de tener la interaccion con el usuario
+ * 
  * @author adell
  */
 public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISuscriptor {
@@ -208,7 +209,7 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
         control.filtrar(id);
 
     }//GEN-LAST:event_idTxTFieldKeyReleased
-
+    
     private void alumnosFiltradosJListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alumnosFiltradosJListMouseClicked
         // TODO add your handling code here:
         int index = alumnosFiltradosJList.getSelectedIndex();
@@ -217,14 +218,22 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
             control.seleccionarAlumnoPorIndice(index);
         }
     }//GEN-LAST:event_alumnosFiltradosJListMouseClicked
-
+    
+    /**
+     * Metodo que retorna la instancia unica de la clase, si no existe la crea
+     * @return 
+     */
     public static FrameConstanciaPrincipal getInstancia() {
         if (instancia == null) {
             instancia = new FrameConstanciaPrincipal();
         }
         return instancia;
     }
-
+    
+    /**
+     *  metodo que se encarga de actualizar la vista obtienendo la informacion de IModeloVista
+     * @param modeloVista contiene la informacion (getters) para actualizar la vista
+     */
     @Override
     public void update(IModeloVista modeloVista) {
         int indicePrevio = alumnosFiltradosJList.getSelectedIndex();
@@ -248,7 +257,12 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
             this.jTextArea1.setText("\n  Seleccione un alumno de la lista.");
         }
     }
-
+    
+    /**
+     * metodo que funciona para darle un formato cuando se selecciona un alumno y poder mostrar sus datos
+     * @param sel alumno seleccionado
+     * @return String que contiene el bloque de texto para añadir en el contenedor
+     */
     private String formatearFichaAlumno(Alumno sel) {
         if (sel == null) {
             return "";
