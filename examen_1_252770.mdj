@@ -370,7 +370,7 @@
 									"font": "Arial;13;0",
 									"left": 427.5,
 									"top": 397,
-									"width": 131.38623046875,
+									"width": 130,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcmyCIm3OsjVs="
@@ -3072,7 +3072,7 @@
 																"$ref": "AAAAAAGcmzyFnIoDFfk="
 															},
 															"edgePosition": 1,
-															"text": "1 : buscarAlumnoPorId()"
+															"text": "1 : ingresa id"
 														},
 														{
 															"_type": "EdgeLabelView",
@@ -4164,7 +4164,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGcmzst0ojCCOo="
 											},
-											"name": "buscarAlumnoPorId()",
+											"name": "ingresa id",
 											"source": {
 												"$ref": "AAAAAAGcmzuA6olGkvQ="
 											},
@@ -8432,9 +8432,9 @@
 																"$ref": "AAAAAAGcneNSNZ6iJow="
 															},
 															"font": "Arial;13;0",
-															"left": 40.72998046875,
+															"left": 38.55908203125,
 															"top": 5,
-															"width": 135.85888671875,
+															"width": 119.1201171875,
 															"height": 13,
 															"text": "GenerarConstanciaSeq"
 														},
@@ -8447,7 +8447,7 @@
 															"font": "Arial;13;1",
 															"left": 21,
 															"top": 5,
-															"width": 13.72998046875,
+															"width": 11.55908203125,
 															"height": 13,
 															"text": "sd"
 														}
@@ -20357,7 +20357,7 @@
 									"visible": false,
 									"font": "Arial;12;0",
 									"containerExtending": true,
-									"left": 343,
+									"left": 347,
 									"top": 634,
 									"height": 12,
 									"alpha": 1.5707963267948966,
@@ -20379,7 +20379,7 @@
 									"visible": null,
 									"font": "Arial;12;0",
 									"containerExtending": true,
-									"left": 343,
+									"left": 347,
 									"top": 619,
 									"height": 12,
 									"alpha": 1.5707963267948966,
@@ -20401,7 +20401,7 @@
 									"visible": false,
 									"font": "Arial;12;0",
 									"containerExtending": true,
-									"left": 343,
+									"left": 347,
 									"top": 664,
 									"height": 12,
 									"alpha": -1.5707963267948966,
