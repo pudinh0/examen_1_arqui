@@ -3173,9 +3173,9 @@
 																"$ref": "AAAAAAGcmzyLtIoXC9s="
 															},
 															"font": "Arial;13;0",
-															"left": 346,
+															"left": 332,
 															"top": 184,
-															"width": 140.892578125,
+															"width": 168.3525390625,
 															"height": 13,
 															"alpha": 1.5707963267948966,
 															"distance": 10,
@@ -3183,7 +3183,7 @@
 																"$ref": "AAAAAAGcmzyLtIoYv6U="
 															},
 															"edgePosition": 1,
-															"text": "2 : buscarAlumnoPorId()"
+															"text": "2 : buscarAlumnoPorId(int id)"
 														},
 														{
 															"_type": "EdgeLabelView",
@@ -3284,9 +3284,9 @@
 																"$ref": "AAAAAAGcmzyQ/IosjgQ="
 															},
 															"font": "Arial;13;0",
-															"left": 583,
+															"left": 569,
 															"top": 233,
-															"width": 143.05078125,
+															"width": 170.5107421875,
 															"height": 13,
 															"alpha": 1.5707963267948966,
 															"distance": 10,
@@ -3294,7 +3294,7 @@
 																"$ref": "AAAAAAGcmzyQ/IotjCI="
 															},
 															"edgePosition": 1,
-															"text": "3 : buscarAlumnoPorID()"
+															"text": "3 : buscarAlumnoPorID(int id)"
 														},
 														{
 															"_type": "EdgeLabelView",
@@ -4178,13 +4178,14 @@
 											"_parent": {
 												"$ref": "AAAAAAGcmzst0ojCCOo="
 											},
-											"name": "buscarAlumnoPorId()",
+											"name": "buscarAlumnoPorId",
 											"source": {
 												"$ref": "AAAAAAGcmztPCYjnpJo="
 											},
 											"target": {
 												"$ref": "AAAAAAGcmztxookn4ds="
-											}
+											},
+											"arguments": "int id"
 										},
 										{
 											"_type": "UMLMessage",
@@ -4192,13 +4193,14 @@
 											"_parent": {
 												"$ref": "AAAAAAGcmzst0ojCCOo="
 											},
-											"name": "buscarAlumnoPorID()",
+											"name": "buscarAlumnoPorID",
 											"source": {
 												"$ref": "AAAAAAGcmztxookn4ds="
 											},
 											"target": {
 												"$ref": "AAAAAAGcmzwpQIncB5A="
-											}
+											},
+											"arguments": "int id"
 										},
 										{
 											"_type": "UMLMessage",
