@@ -51,6 +51,7 @@ public class FrameConstanciaPrincipal extends javax.swing.JFrame implements ISus
         setResizable(false);
 
         contenedorPrincipalPanel.setBackground(new java.awt.Color(161, 79, 126));
+        contenedorPrincipalPanel.setName(""); // NOI18N
 
         idTxTField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {

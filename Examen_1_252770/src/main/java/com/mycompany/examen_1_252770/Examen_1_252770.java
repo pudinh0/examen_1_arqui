@@ -16,6 +16,7 @@ public class Examen_1_252770 {
     public static void main(String[] args) {
 
         FrameConstanciaPrincipal.getInstancia().setVisible(true);
+        FrameConstanciaPrincipal.getInstancia().setLocationRelativeTo(null);
         ISuscriptor suscriptor = FrameConstanciaPrincipal.getInstancia();
         ConstanciaModelo.getInstance().addSuscriptor(suscriptor);
 
