@@ -30,12 +30,14 @@ public class Alumno {
         Alumno denis = new Alumno(252450, 8, 6, "Denis", "ISW");
         Alumno peter = new Alumno(252627, 9, 6, "Peter", "ISW");
         Alumno mafer= new Alumno(247430, 10,8,"mafer","MVZ");
+        Alumno juanpi = new Alumno(252886,12,6,"juanpi","ISW");
         
         alumnos.add(mafer);
         alumnos.add(adel);
         alumnos.add(norma);
         alumnos.add(denis);
         alumnos.add(peter);
+        alumnos.add(juanpi);
     }
     
     public static void imprimirLista(){
